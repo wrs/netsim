@@ -39,7 +39,7 @@ class NetworkTest < Minitest::Test
   def test_ipv4address
     a = IPv4Address.new("1.2.3.4")
     puts a
-    puts a.subnet(24)
+    puts a.network_addr(24)
     puts a.host_addr(24)
   end
 
