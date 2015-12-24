@@ -63,7 +63,7 @@ class IPv4Address
   end
 
   def to_s
-    sprintf("%032s", @word.to_s(2)).scan(/.{8}/).map { |s| s.to_i(2) }.join(".")
+    [@word].pack("L>").unpack("CCCC").map(&:to_s).join(".")
   end
 end
 
